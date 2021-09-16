@@ -21,7 +21,7 @@ incorrectTxt.innerText = `Incorrect: ${skill_data.incorrect}`;
 const calc = Desmos.GraphingCalculator(calcDiv, {expressions : false, lockViewport : true, settingsMenu: false});
 
 async function setUpProblem() {
-  const response = await axios.get('http://localhost:3000/skills/lineareq');
+  const response = await axios.get('https://mccool-math.herokuapp.com/skills/lineareq');
   answer.innerText = response.data.equation;
   MQ.StaticMath(answer);
   problem = new GraphingProblem(calc, response.data.expression);
